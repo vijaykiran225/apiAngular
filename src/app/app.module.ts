@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ListDisputesComponent } from './list-disputes/list-disputes.component';
 import { GetDisputeComponent } from './get-dispute/get-dispute.component';
 import { GetTokenComponent } from './get-token/get-token.component';
-import { RouutingDisputesModule } from './rouuting-disputes/rouuting-disputes.module';
+import { RoutingDisputesModule } from './routing-disputes/routing-disputes.module';
 
 @NgModule({
   declarations: [
@@ -16,8 +16,7 @@ import { RouutingDisputesModule } from './rouuting-disputes/rouuting-disputes.mo
   ],
   imports: [
     BrowserModule,
-    RouutingDisputesModule
-  ],
+    RoutingDisputesModule  ],
   providers: [],
   bootstrap: [AppComponent]
 })
