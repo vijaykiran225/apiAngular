@@ -1,32 +1,56 @@
- list-disputes works!
+<head>
+  <link rel="stylesheet" href="../../assets/bootstrap.css">
+</head>
+list-disputes works!
+<span *ngIf="listDisputes === undefined || listDisputes.items === undefined || listDisputes.items.length == 0">
+  No disputes !
+</span  >
 
-<table border="1">
-  <ol>
-    <li *ngFor="let dispute of listDisputes.items">
-      <tr>
-        <td>
-          {{dispute.dispute_id}}
-        </td>
-<td>
-  {{dispute.create_time}}
-</td>
-        <td>
- {{dispute.reason}}
-        </td>
+<table class="table" *ngIf="listDisputes !== undefined && listDisputes.items !== undefined && listDisputes.items.length > 0">
+<tr >
+    <th>
+      Id
+    </th>
+    <th>
+      Created
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Status
+    </th>
+    <th>
+      Amount
+    </th>
+<th>
+  action
+</th>
+  </tr>
+<tr *ngFor=" let dispute of listDisputes.items " style="font-family: 'Comic Sans MS';font-size: small">
 
-<td>
-  {{dispute.status}}
-</td>
+    <td>
+      {{dispute.dispute_id}}
+    </td>
+    <td>
+      {{dispute.create_time}}
+    </td>
+    <td>
+      {{dispute.reason}}
+    </td>
 
-<td>
- {{dispute.dispute_amount.currency_code}} {{dispute.dispute_amount.value}}
-</td>
-<td>
-<a routerLink="detail/{{dispute.dispute_id}}">view</a>
-</td>
-      </tr>
+    <td>
+      {{dispute.status}}
+    </td>
 
-    </li>
-
-</ol>
+    <td>
+      {{dispute.dispute_amount.currency_code}} {{dispute.dispute_amount.value}}
+    </td>
+    <td>
+      <button type="button" class="btn btn-primary" routerLink="{{dispute.dispute_id}}">view</button>
+      <!-- <a routerLink="{{dispute.dispute_id}}"></a> -->
+    </td>
+  </tr>
 </table>
+
+

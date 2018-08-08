@@ -7,7 +7,7 @@ import { GetDisputeComponent } from '../get-dispute/get-dispute.component';
 const routes: Route[] = [
     { path: '', redirectTo: '/disputes', pathMatch: 'full' },
     { path: 'disputes', component: ListDisputesComponent },
-  { path: 'disputes/detail/:id', component: GetDisputeComponent }
+  { path: 'disputes/:id', component: GetDisputeComponent }
   ];
 
 @NgModule({

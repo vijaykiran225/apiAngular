@@ -1,5 +1,71 @@
-<p>
-  get-dispute works!
-</p>
+<head>
+  <link rel="stylesheet" href="../../assets/bootstrap.css">
+</head>
 
-{{aDispute.dispute_id}} is the id
+get-dispute works! {{aDispute.dispute_id}} is the id
+
+<table class="table table-responsive center">
+  <tr>
+    <td>ID</td>
+    <td>{{aDispute.dispute_id}} </td>
+  </tr>
+  <tr>
+    <td>create_time</td>
+    <td>{{aDispute.create_time}} </td>
+  </tr>
+  <tr>
+    <td>update_time</td>
+    <td>{{aDispute.update_time}} </td>
+  </tr>
+  <tr>
+    <td>Txn info</td>
+<td>{{aDispute.disputed_transactions[0].buyer_transaction_id}} </td>
+  </tr>
+  <tr>
+    <td>reason</td>
+    <td>{{aDispute.reason}} </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>{{aDispute.status}} </td>
+  </tr>
+  <tr>
+    <td>Amount</td>
+    <td>{{aDispute.dispute_amount.currency_code}} {{aDispute.dispute_amount.value}}</td>
+  </tr>
+  <tr>
+    <td>Outcome</td>
+    <td>{{aDispute.dispute_outcome.outcome_code}} </td>
+  </tr>
+  <tr>
+    <td>dispute_life_cycle_stage</td>
+    <td>{{aDispute.dispute_life_cycle_stage}} </td>
+  </tr>
+  <tr>
+    <td>dispute_channel</td>
+    <td>{{aDispute.dispute_channel}} </td>
+  </tr>
+  <tr>
+    <td>Conversations</td>
+    <td>
+      <ul>
+        <li *ngFor="let msg of aDispute.messages">
+          {{msg.posted_by}} : {{msg.content}}
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Offers</td>
+    <td>{{aDispute.offer.buyer_requested_amount.currency_code}} {{aDispute.offer.buyer_requested_amount.value}} </td>
+  </tr>
+  <tr>
+    <td>links</td>
+    <td>
+      <a class="btn btn-success" *ngFor="let link of aDispute.links">
+        {{link.rel}}
+      </a>
+    </td>
+  </tr>
+
+</table>
