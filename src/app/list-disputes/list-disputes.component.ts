@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ListDisputes } from '../mock-data/listDisputes';
+import { list } from '../mock-data/mockSearch';
 
 @Component({
   selector: 'app-list-disputes',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListDisputesComponent implements OnInit {
 
+  listDisputes: ListDisputes;
   constructor() { }
 
+  fillUpMockData(): void {
+    this.listDisputes = list;
+  }
+
   ngOnInit() {
+    this.fillUpMockData();
   }
 
 }

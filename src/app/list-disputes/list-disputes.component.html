@@ -1,3 +1,28 @@
-<p>
-  list-disputes works!
-</p>
+ list-disputes works!
+
+<table border="10">
+  <ol>
+    <li *ngFor="let dispute of listDisputes.items">
+      <tr>
+        <td>
+          {{dispute.dispute_id}}
+        </td>
+<td>
+  {{dispute.create_time}}
+</td>
+        <td>
+ {{dispute.reason}}
+        </td>
+
+<td>
+  {{dispute.status}}
+</td>
+
+<td>
+ {{dispute.dispute_amount.currency_code}} {{dispute.dispute_amount.value}}
+</td>
+      </tr>
+    </li>
+
+</ol>
+</table>
