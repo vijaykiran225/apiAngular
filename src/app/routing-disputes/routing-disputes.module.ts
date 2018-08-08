@@ -1,10 +1,17 @@
+import { RouterModule, Route } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ListDisputesComponent } from '../list-disputes/list-disputes.component';
+import { GetDisputeComponent } from '../get-dispute/get-dispute.component';
+
+
+const routes: Route[] = [
+    { path: '', redirectTo: '/disputes', pathMatch: 'full' },
+    { path: 'disputes', component: ListDisputesComponent },
+  { path: 'disputes/detail/:id', component: GetDisputeComponent }
+  ];
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: []
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class RoutingDisputesModule { }

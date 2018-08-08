@@ -1,6 +1,6 @@
  list-disputes works!
 
-<table border="10">
+<table border="1">
   <ol>
     <li *ngFor="let dispute of listDisputes.items">
       <tr>
@@ -21,7 +21,11 @@
 <td>
  {{dispute.dispute_amount.currency_code}} {{dispute.dispute_amount.value}}
 </td>
+<td>
+<a routerLink="detail/{{dispute.dispute_id}}">view</a>
+</td>
       </tr>
+
     </li>
 
 </ol>
