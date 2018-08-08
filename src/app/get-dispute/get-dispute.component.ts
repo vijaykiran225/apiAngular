@@ -18,7 +18,9 @@ export class GetDisputeComponent implements OnInit {
     private disputeService: DisputeApiServService) { }
 
   fillUpActualData(): void {
-    this.aDispute = this.disputeService.getDisputeByID(this.getPathId());
+    console.log('about to call das get');
+    this.disputeService.getDisputeByID(this.getPathId())
+    .subscribe(data => this.aDispute = data);
   }
   ngOnInit() {
     this.fillUpActualData();

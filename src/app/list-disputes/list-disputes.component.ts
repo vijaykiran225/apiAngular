@@ -16,7 +16,8 @@ export class ListDisputesComponent implements OnInit {
     private disputeService: DisputeApiServService) { }
 
   fillUpActualData(): void {
-    this.listDisputes = this.disputeService.getDisputes();
+    console.log('filled up search data');
+    this.disputeService.getDisputes().subscribe(data => this.listDisputes = data);
   }
   ngOnInit() {
     this.fillUpActualData();
