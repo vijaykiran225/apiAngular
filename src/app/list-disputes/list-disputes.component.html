@@ -1,13 +1,12 @@
 <head>
   <link rel="stylesheet" href="../../assets/bootstrap.css">
 </head>
-list-disputes works!
-<span *ngIf="listDisputes === undefined || listDisputes.items === undefined || listDisputes.items.length == 0">
-  No disputes !
-</span  >
 
-<table class="table" *ngIf="listDisputes !== undefined && listDisputes.items !== undefined && listDisputes.items.length > 0">
-<tr >
+<input ng-Model="webToken" value="{{webToken}}" #userToken/> 
+<button class="btn btn-danger" (click)="refresh(userToken.value)">refresh</button>
+
+<table class="table table-striped" *ngIf="listDisputes !== undefined && listDisputes.items !== undefined && listDisputes.items.length > 0">
+  <tr>
     <th>
       Id
     </th>
@@ -23,11 +22,11 @@ list-disputes works!
     <th>
       Amount
     </th>
-<th>
-  action
-</th>
+    <th>
+      action
+    </th>
   </tr>
-<tr *ngFor=" let dispute of listDisputes.items " style="font-family: 'Comic Sans MS';font-size: small">
+  <tr *ngFor=" let dispute of listDisputes.items " style="font-family: 'Comic Sans MS';font-size: small">
 
     <td>
       {{dispute.dispute_id}}
@@ -52,5 +51,3 @@ list-disputes works!
     </td>
   </tr>
 </table>
-
-

@@ -1,10 +1,10 @@
 <head>
   <link rel="stylesheet" href="../../assets/bootstrap.css">
 </head>
+<input ng-Model="webToken" value="{{webToken}}" #userToken/>
+<button class="btn btn-danger" (click)="refresh(userToken.value)">refresh</button>
 
-get-dispute works! {{aDispute.dispute_id}} is the id
-
-<table class="table table-responsive center">
+<table class="table table-responsive center" *ngIf="aDispute !== undefined">
   <tr>
     <td>ID</td>
     <td>{{aDispute.dispute_id}} </td>
@@ -69,3 +69,5 @@ get-dispute works! {{aDispute.dispute_id}} is the id
   </tr>
 
 </table>
+
+<button class="btn btn-success" (click)="go_back()">go back</button>
